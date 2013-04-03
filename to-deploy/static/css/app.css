@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'myriad-pro', trebuchet ms, helvetica, sans;
 }
 #my-container {
     height: 900px;
@@ -43,6 +44,9 @@ ul.tabs li {
 ul.tabs li.active {
     background: rgb(252, 252, 249);
     border-color: rgb(255, 255, 250);
+}
+ul.tabs li:hover {
+    background: rgb(255, 255, 255);
 }
 
 ul.tabs li a {
