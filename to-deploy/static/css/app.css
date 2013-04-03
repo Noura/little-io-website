@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+#my-container {
+    height: 900px;
+}
+#my-container > div {
+    height: 100%;
+}
+#sidepanel {
+    background: rgb(60, 60, 50);
+    padding-top: 30px;
+}
+#bigpanel {
+    background: rgb(235, 235, 225);
+}
+#content {
+    padding-top: 15px;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.tabs {
+    list-style: none;
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+ul.tabs li {
+    display: inline-block;
+    float: left;
+    padding: 5px 10px;
+    background: rgb(245, 245, 235);
+    margin: 2px;
+    border-right: 1px solid rgb(200, 200, 190);
+    border-left: 1px solid rgb(200, 200, 190);
+}
+ul.tabs li.active {
+    background: rgb(252, 252, 249);
+    border-color: rgb(255, 255, 250);
+}
+
+ul.tabs li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* FRACTIONS - relative box sizing as an alternative to bootstrap spans */
+[class*="fraction"] {
+    margin-right:0;
+    margin-left:0;
+    padding:0;
+    float:left;
+}
+.inner-fraction {
+    width:98%;
+    margin: 1%;
+}
+.fraction-whole {
+        width:100%;
+}
+.fraction-half {
+        width:50%;
+}
+.fraction-third {
+        width:33%;
+}
+.fraction-fourth {
+        width:25%;
+}
+.fraction-three-fourths {
+        width:75%;
+}
+.fraction-two-thirds {
+        width:67%;
+}

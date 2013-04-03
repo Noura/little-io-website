@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Little IO</title>
+<link href="/static/css/app.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="my-container" class="fraction-whole">
+    <div id="sidepanel" class="fraction-third">
+        <div class="inner-fraction">
+            <img class="img-center" src="/static/img/littleio_small_dark.png"></img>
+        </div>
+    </div>
+    <div id="bigpanel" class="fraction-two-thirds">
+        <div class="inner-fraction">
+            <div class="fraction-whole">
+                {% set tabs = [('/', 'home'), ('/rack_extensions', 'rack extensions'), ('/info', 'info')] %}
+                <ul class="tabs">
+                    {% for tab in tabs %}
+                        <li {% if tab[0] == active_tab %}class="active"{% endif %}>
+                            <a href="{{tab[0]}}">
+                                {{tab[1]}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="content" class="fraction-whole">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/js/underscore.min.js"></script>
+
+{% block js %} {% endblock %}
+
+</body>
+</html>
