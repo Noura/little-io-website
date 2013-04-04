@@ -13,17 +13,32 @@
     <div id="bigpanel">
         <div id="bigpanel-inner">
             <div class="tabs">
-                {% set tabs = [('/', 'home'), ('/rack_extensions', 'rack extensions'), ('/hacks', 'hacks'), ('/info', 'info')] %}
-                {% for tab in tabs %}
-                    <a class="tab {% if tab[0] == active_tab %}active{% endif %}"  href="{{tab[0]}}">
-                        {{tab[1]}}
+                
+                
+                    <a class="tab "  href="/">
+                        home
                     </a>
-                {% endfor %}
+                
+                    <a class="tab "  href="/rack_extensions">
+                        rack extensions
+                    </a>
+                
+                    <a class="tab active"  href="/hacks">
+                        hacks
+                    </a>
+                
+                    <a class="tab "  href="/info">
+                        info
+                    </a>
+                
             </div>
             <div class="clear"></div>
             <div id="content">
-                {% block body %}
-                {% endblock %}
+                
+Other hacks in our spare time:
+explain_s_plane
+echollage
+
             </div>
         </div>
         <div class="clear"></div>
@@ -42,7 +57,7 @@ $(window).load(function(){
 });
 </script>
 
-{% block js %} {% endblock %}
+ 
 
 </body>
 </html>

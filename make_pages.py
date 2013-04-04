@@ -22,6 +22,12 @@ pages = [ {
         'active_tab': '/info',
     },
     'route': 'info',
+}, {
+    'filename': 'hacks.html',
+    'context': {
+        'active_tab': '/hacks',
+    },
+    'route': 'hacks',
 } ]
 
 def main():

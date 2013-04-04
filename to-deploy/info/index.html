@@ -6,49 +6,56 @@
 </head>
 <body>
 
-<div id="my-container" class="fraction-whole">
-    <div id="sidepanel" class="fraction-third">
-        <div class="inner-fraction">
-            <img class="img-center" src="/static/img/littleio_small_dark.png"></img>
-        </div>
+<div id="my-container">
+    <div id="sidepanel">
+        <img id="logo" class="img-center" src="/static/img/littleio_small_dark.png"></img>
     </div>
-    <div id="bigpanel" class="fraction-two-thirds">
-        <div class="inner-fraction">
-            <div class="fraction-whole">
+    <div id="bigpanel">
+        <div id="bigpanel-inner">
+            <div class="tabs">
                 
-                <ul class="tabs">
-                    
-                        <li >
-                            <a href="/">
-                                home
-                            </a>
-                        </li>
-                    
-                        <li >
-                            <a href="/rack_extensions">
-                                rack extensions
-                            </a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="/info">
-                                info
-                            </a>
-                        </li>
-                    
-                </ul>
+                
+                    <a class="tab "  href="/">
+                        home
+                    </a>
+                
+                    <a class="tab "  href="/rack_extensions">
+                        rack extensions
+                    </a>
+                
+                    <a class="tab "  href="/hacks">
+                        hacks
+                    </a>
+                
+                    <a class="tab active"  href="/info">
+                        info
+                    </a>
+                
             </div>
-            <div id="content" class="fraction-whole">
+            <div class="clear"></div>
+            <div id="content">
                 
-Matt & Noura <3 <3 <3
+<a href="http://tytel.org">Matt</a> and Noura <3 <3 <3
+<br/>
+Based in Somerville, Massachusetts, US.
 
             </div>
         </div>
+        <div class="clear"></div>
     </div>
 </div>
+<div class="clear"></div>
 
 <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/static/js/underscore.min.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+    var h = $('#bigpanel-inner').height();
+    h = Math.max(h, $('#bigpanel').height());
+    $('#bigpanel').height(h);
+    $('#sidepanel').height(h);
+});
+</script>
 
  
 
