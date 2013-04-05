@@ -10,18 +10,6 @@ pages = [ {
     'context':  {
         'active_tab': '/',
     }
-}, {
-    'filename': 'rack_extensions.html',
-    'context': {
-        'active_tab': '/rack_extensions',
-    },
-    'route': 'rack_extensions',
-}, {
-    'filename': 'info.html',
-    'context': {
-        'active_tab': '/info',
-    },
-    'route': 'info',
 } ]
 
 def main():

@@ -9,18 +9,16 @@
 <div id="my-container">
     <div id="sidepanel">
         <img id="logo" class="img-center" src="/static/img/littleio_small_dark.png"></img>
+        <p id="company-info">
+            made by
+            <br/>
+            <a href="http://tytel.org">Matt</a> and Noura <3 <3 <3
+            <br/>
+            based in Somerville, MA, US.
+        </p>
     </div>
     <div id="bigpanel">
         <div id="bigpanel-inner">
-            <div class="tabs">
-                {% set tabs = [('/', 'home'), ('/rack_extensions', 'rack extensions'), ('/info', 'info')] %}
-                {% for tab in tabs %}
-                    <a class="tab {% if tab[0] == active_tab %}active{% endif %}"  href="{{tab[0]}}">
-                        {{tab[1]}}
-                    </a>
-                {% endfor %}
-            </div>
-            <div class="clear"></div>
             <div id="content">
                 {% block body %}
                 {% endblock %}
