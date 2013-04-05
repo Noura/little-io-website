@@ -1,9 +1,18 @@
 body, html {
     height: 100%;
+    font-size: 100%;
 }
 @font-face {
     font-family: 'myriad-pro-light';
     src: url(../fnt/MyriadPro-Light.otf);
+}
+@font-face {
+    font-family: 'myriad-pro-regular';
+    src: url(../fnt/MyriadPro-Regular.otf);
+}
+@font-face {
+    font-family: 'myriad-pro-bold';
+    src: url(../fnt/MyriadPro-Bold.otf);
 }
 body {
     margin: 0;
@@ -19,10 +28,10 @@ body {
 #bigpanel {
     display: inline-block;
     float: left;
-    height: 100%;
+    min-height: 100%;
 }
 #sidepanel {
-    background: rgb(60, 60, 50);
+    background: rgb(40, 40, 35);
     width: 220px;
 }
 #bigpanel-inner {
@@ -66,4 +75,21 @@ a {
 
 .clear {
     clear: both;
+}
+
+h4.list-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ul.list {
+    margin-top: .3em;
+    list-style-type: binary;
+    font-size: 65%;
+    font-family: 'Courier New';
+    color: rgb(10, 10, 10);
+}
+ul.list span.item {
+    font-size: 153.8%;
+    font-weight: normal;
+    font-family: 'myriad-pro-light';
 }
