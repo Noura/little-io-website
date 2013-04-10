@@ -17,9 +17,12 @@ body, html {
 body {
     margin: 0;
     font-family: 'myriad-pro-light', trebuchet ms, helvetica, sans;
-    background: rgb(235, 230, 225);
+    background: rgb(35, 35, 35);
+    color: rgb(205, 205, 205);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 1000, color-stop(0, #1c1c1c), color-stop(1, #050505));
 }
-a {
+a,
+a:hover {
     color: inherit;
 }
 ul.list {
@@ -27,26 +30,18 @@ ul.list {
     list-style-type: binary;
     font-size: 65%;
     font-family: 'Courier New';
-    color: rgb(10, 10, 10);
+    color: rgb(200, 200, 200);
 }
 ul.list span.item {
     font-size: 153.8%;
     font-weight: normal;
     font-family: 'myriad-pro-light';
+    color: rgb(205, 205, 205);
 }
 
 #my-container {
-    background: rgb(175, 170, 165);
     margin: auto;
     max-width: 760px;
-}
-.full.row-fluid {
-    margin-left: -20px;
-    padding: 15px 20px;
-}
-.dark {
-    background: rgb(55, 50, 45);
-    color: rgb(235, 230, 225);
 }
 #desc {
     margin-top: 19px;
@@ -56,9 +51,24 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
     text-align: center;
-    margin-bottom: 15px;
-    margin-top: 20px;
-}
-.space-after {
     margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'myriad-pro-bold';
+    font-size: 70px;
+    line-height: 1em;
+    color: rgb(245, 245, 245);
+    letter-spacing: .05em;
+    text-shadow: 0 0 5px rgb(100, 100, 100);
+}
+.plugin {
+    margin-bottom: 20px;
+    box-shadow: 0 0 200px rgba(255, 255, 255, .1);
+}
+#header {
+    padding: 20px 0 10px;;
+}
+#footer {
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
 }
