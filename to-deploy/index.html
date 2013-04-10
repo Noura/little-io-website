@@ -2,97 +2,111 @@
 <html lang="en">
 <head>
 <title>Little IO</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38450508-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 <link href="/static/css/app.css" rel="stylesheet">
 </head>
 <body>
 
-<div id="my-container">
-    <div id="sidepanel">
-        <img id="logo" class="img-center" src="/static/img/littleio_small_dark.png"></img>
-        <p id="company-info">
-            made by
-            <br/>
-            <a href="http://tytel.org">Matt</a> and Noura <3 <3 <3
-            <br/>
-            based in Somerville, MA, US.
-        </p>
-    </div>
-    <div id="bigpanel">
-        <div id="bigpanel-inner">
-            <div id="content">
-                
-<h1>Little LFO</h1>
-<img src="/static/img/little_lfo.png"></img>
-<p>Little LFO is a semi-modular Rack Extension for <a href="http://shop.propellerheads.se">Reason</a>.</p>
-<h4 class="list-title">Uses</h4>
-<ul class="list">
-    <li>
-        <span class="item">
-            a monophonic oscillator section for a modular synth
-        </span>
-    </li>
-    <li>
-        <span class="item">
-            a modulation source
-        </span>
-    </li>
-    <li>
-        <span class="item">
-            a noise maker
-        </span>
-    </li>
-</ul>
-<h4 class="list-title">Features</h4>
-<ul class="list">
-    <li>
-        <span class="item">
-            4 oscillators
-        </span>
-    </li>
-    <li>
-        <span class="item">
-            Enveloped and non-enveloped CV outputs (bipolar and unipolar)
-        </span>
-    </li>
-    <li>
-        <span class="item">
-            Enveloped and non-enveloped audio outputs
-        </span>
-    </li>
-    <li>
-        <span class="item">
-            Gate, note, and envelope CV out
-        </span>
-    </li>
-</ul>
-<h4 class="list-title">Uniqueness</h4>
-<ul class="list">
-    <li>
-        <span class="item">
-            All active oscillators...
-        </span>
-    </li>
-</ul>
-
-            </div>
+<div id="my-container" class="container-fluid">
+    <div class="row-fluid">
+        <div id="sidepanel" class="span2">
+            <img id="logo" class="img-center" src="/static/img/littleio_small_dark.png"></img>
+            <p id="company-info">
+                made by
+                <br/>
+                <a href="http://tytel.org" target="_blank">
+                    Matt
+                </a> 
+                and 
+                <a href="http://nourahowell.com" target="_blank">
+                    Noura
+                </a>
+                <3 <3 <3
+                <br/>
+                based in Somerville, MA, US.
+            </p>
         </div>
-        <div class="clear"></div>
+        <div id="bigpanel" class="span10">
+            <h1>Little LFO</h1>
+            <img src="/static/img/little_lfo.png"></img>
+            <p>Little LFO is a semi-modular Rack Extension for <a href="http://shop.propellerheads.se" target="_blank">Reason</a>.</p>
+            <h4 class="list-title">Uses</h4>
+            <ul class="list">
+                <li>
+                    <span class="item">
+                        a monophonic oscillator section for a modular synth
+                    </span>
+                </li>
+                <li>
+                    <span class="item">
+                        a modulation source
+                    </span>
+                </li>
+                <li>
+                    <span class="item">
+                        a noise maker
+                    </span>
+                </li>
+            </ul>
+            <h4 class="list-title">Features</h4>
+            <ul class="list">
+                <li>
+                    <span class="item">
+                        4 oscillators
+                    </span>
+                </li>
+                <li>
+                    <span class="item">
+                        Enveloped and non-enveloped CV outputs (bipolar and unipolar)
+                    </span>
+                </li>
+                <li>
+                    <span class="item">
+                        Enveloped and non-enveloped audio outputs
+                    </span>
+                </li>
+                <li>
+                    <span class="item">
+                        Gate, note, and envelope CV out
+                    </span>
+                </li>
+            </ul>
+            <h4 class="list-title">Uniqueness</h4>
+            <ul class="list">
+                <li>
+                    <span class="item">
+                        All active oscillators...
+                    </span>
+                </li>
+            </ul>
+
+        </div>
     </div>
 </div>
-<div class="clear"></div>
 
 <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/static/js/underscore.min.js"></script>
 <script type="text/javascript">
-$(window).load(function(){
-    var h = $('#bigpanel-inner').height();
-    h = Math.max(h, $('#bigpanel').height());
-    $('#bigpanel').height(h);
-    $('#sidepanel').height(h);
-});
+    $(window).load(function(){
+        var h = $('#bigpanel-inner').height();
+        h = Math.max(h, $('#bigpanel').height());
+        $('#bigpanel').height(h);
+        $('#sidepanel').height(h);
+    });
 </script>
-
- 
-
 </body>
 </html>

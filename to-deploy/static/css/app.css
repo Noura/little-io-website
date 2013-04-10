@@ -19,38 +19,10 @@ body {
     font-family: 'myriad-pro-light', trebuchet ms, helvetica, sans;
     background: rgb(235, 230, 225);
 }
+/*
 #my-container {
     background: rgb(235, 230, 225);
     height: 100%;
-    width: 1100px;
-}
-#sidepanel,
-#bigpanel {
-    display: inline-block;
-    float: left;
-    min-height: 100%;
-}
-#sidepanel {
-    background: rgb(40, 40, 35);
-    width: 220px;
-    position: relative;
-    font-size: 85%;
-    color: rgb(109, 105, 102);
-}
-#bigpanel-inner {
-    padding-left: 2em;
-}
-#content {
-    padding-top: 15px;
-}
-#logo {
-    margin-top:20px;
-}
-#company-info {
-    position: absolute;
-    bottom: 0;
-    margin-left: 1em;
-}
 
 .img-center {
     display: block;
@@ -60,15 +32,7 @@ body {
 a {
     color: inherit;
 }
-
-.clear {
-    clear: both;
-}
-
-h4.list-title {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+*/
 ul.list {
     margin-top: .3em;
     list-style-type: binary;
