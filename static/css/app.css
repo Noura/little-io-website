@@ -18,8 +18,9 @@ body {
     margin: 0;
     font-family: 'myriad-pro-light', trebuchet ms, helvetica, sans;
     background: rgb(35, 35, 35);
-    color: rgb(205, 205, 205);
+    color: rgb(155, 155, 155);
     background-image: -webkit-gradient(radial, center top, 0, center top, 1000, color-stop(0, #1c1c1c), color-stop(1, #050505));
+    background-attachment: fixed;
 }
 a,
 a:hover {
@@ -30,13 +31,13 @@ ul.list {
     list-style-type: binary;
     font-size: 65%;
     font-family: 'Courier New';
-    color: rgb(200, 200, 200);
+    color: rgb(135, 135, 135);
 }
 ul.list span.item {
-    font-size: 153.8%;
+    font-size: 153%;
     font-weight: normal;
     font-family: 'myriad-pro-light';
-    color: rgb(205, 205, 205);
+    color: rgb(155, 155, 155);
 }
 
 #my-container {
@@ -48,15 +49,13 @@ ul.list span.item {
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: 'myriad-pro-regular';
+    color: rgb(175, 175, 175);
 }
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-family: 'myriad-pro-bold';
-    font-size: 70px;
+    font-size: 60px;
     line-height: 1em;
-    color: rgb(245, 245, 245);
+    color: rgb(200, 200, 200);
     letter-spacing: .05em;
     text-shadow: 0 0 5px rgb(100, 100, 100);
 }
@@ -66,6 +65,10 @@ h1 {
 }
 #header {
     padding: 20px 0 10px;;
+    position: relative;
+}
+#logo {
+    position: absolute;
 }
 #footer {
     padding-top: 20px;
