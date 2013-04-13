@@ -14,6 +14,12 @@ body, html {
     font-family: 'myriad-pro-bold';
     src: url(../fnt/MyriadPro-Bold.otf);
 }
+
+#soundmanager-debug {
+ /* SM2 debug container (optional, makes debug more useable) */
+ position:absolute;position:fixed;*position:absolute;bottom:10px;right:10px;width:50em;height:18em;overflow:auto;background:#fff;margin:1em;padding:1em;border:1px solid #999;font-family:"lucida console",verdana,tahoma,"sans serif";font-size:x-small;line-height:1.5em;opacity:0.9;filter:alpha(opacity=90);z-index:99;
+}
+
 body {
     margin: 0;
     font-family: 'myriad-pro-light', trebuchet ms, helvetica, sans;
@@ -24,7 +30,7 @@ body {
 }
 a,
 a:hover {
-    color: inherit;
+    color: #fff;
 }
 ul.list {
     margin-top: .3em;
@@ -53,9 +59,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
     text-align: center;
-    font-size: 60px;
+    font-size: 48px;
     line-height: 1em;
-    color: rgb(200, 200, 200);
+    color: rgb(220, 210, 200);
     letter-spacing: .05em;
     text-shadow: 0 0 5px rgb(100, 100, 100);
 }
@@ -63,12 +69,12 @@ h1 {
     margin-bottom: 20px;
     box-shadow: 0 0 200px rgba(255, 255, 255, .1);
 }
+.tagline {
+    text-align: center;
+}
 #header {
     padding: 20px 0 10px;;
     position: relative;
-}
-#logo {
-    position: absolute;
 }
 #footer {
     padding-top: 20px;
