@@ -20,12 +20,23 @@
 <link rel="stylesheet" type="text/css" href="/static/css/optional-themes.css">
 <!-- soundManager.useFlashBlock: related CSS -->
 <link rel="stylesheet" type="text/css" href="/static/css/flashblock.css">
+
+<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/js/underscore.min.js"></script>
+<script type="text/javascript" src="/static/js/soundmanager2.js"></script>
+<script type="text/javascript" src="/static/js/page-player.js"></script>
+<script type="text/javascript">
+  soundManager.setup({
+    url: '/static/swf/'
+  });
+</script>
+
 </head>
 <body>
   <div id="my-container" class="container-fluid">
     <div id="header" class="row-fluid">
       <div class="span4">
-        <img id="logo" src="/static/img/littleio_small_dark.png"></img>
+        <img id="logo" alt="Little IO Logo" src="/static/img/littleio_small_dark.png"></img>
       </div>
       <div class="span4">
         <h1>Little LFO</h1>
@@ -40,7 +51,7 @@
 
     <div class="row-fluid">
       <div class="span12">
-        <img class="plugin" src="/static/img/little_lfo.png"></img>
+        <img class="plugin" alt="Little LFO" src="/static/img/little_lfo.png"></img>
       </div>
     </div>
 
@@ -56,9 +67,9 @@
 
         <ul class="playlist dark">
 
-          <li><a class="song" href="/static/audio/Digi_Warp.mp3">Digi Warp</a><a class="artist" href="http://soundcloud.com/massivesoundcanada">Simon Bader</a></li>
-          <li><a class="song" href="/static/audio/Lil_LFO_in_Dub.mp3">Lil LFO in Dub</a><a class="artist" href="https://soundcloud.com/naakaalaakom">nicholi</a></li>
           <li><a class="song" href="/static/audio/The_Swarm.mp3">The Swarm</a><a class="artist" href="http://soundcloud.com/massivesoundcanada">Simon Bader</a></li>
+          <li><a class="song" href="/static/audio/Lil_LFO_in_Dub.mp3">Lil LFO in Dub</a><a class="artist" href="https://soundcloud.com/naakaalaakom">nicholi</a></li>
+          <li><a class="song" href="/static/audio/Digi_Warp.mp3">Digi Warp</a><a class="artist" href="http://soundcloud.com/massivesoundcanada">Simon Bader</a></li>
           <li><a class="song" href="/static/audio/Little_Demo.mp3">Little Demo</a><a class="artist" href="https://soundcloud.com/Fredhoven">Fredhoven</a></li>
         </ul>
       </div>
@@ -164,17 +175,6 @@
     </div>
 
   </div>
-
-  <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="/static/js/underscore.min.js"></script>
-  <script type="text/javascript" src="/static/js/soundmanager2.js"></script>
-  <script type="text/javascript" src="/static/js/page-player.js"></script>
-  <script type="text/javascript">
-
-    soundManager.setup({
-url: '/static/swf/'
-});
-</script>
 <script type="text/javascript">
   $(window).load(function(){
       var h = $('#bigpanel-inner').height();

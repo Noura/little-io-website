@@ -251,7 +251,6 @@ ul.playlist li.sm2_paused .timing {
 }
 
 ul.playlist li.sm2_paused .timing .sm2_position {
- text-decoration:blink; /* hee hee. first actual appropriate use? :D */
 }
 
 ul.playlist li.sm2_paused .timing,
