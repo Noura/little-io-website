@@ -34,6 +34,7 @@ a:hover {
 }
 ul.list {
     margin-top: .3em;
+    margin-bottom: 20px;
     list-style-type: binary;
     font-size: 65%;
     font-family: 'Courier New';
@@ -54,20 +55,29 @@ ul.list span.item {
     margin-top: 19px;
 }
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'myriad-pro-regular';
-    color: rgb(175, 175, 175);
+    font-family: 'myriad-pro-light';
+    color: rgb(220, 210, 200);
+}
+.logo {
+    padding-right:14.5px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 h1 {
     text-align: center;
-    font-size: 48px;
+    font-size: 44px;
     line-height: 1em;
-    color: rgb(220, 210, 200);
+    color: rgb(220, 210, 190);
     letter-spacing: .05em;
     text-shadow: 0 0 5px rgb(100, 100, 100);
 }
 .plugin {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 0 200px rgba(255, 255, 255, .1);
+}
+.player {
+    margin-bottom: 20px;
 }
 .tagline {
     text-align: center;
