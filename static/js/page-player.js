@@ -304,6 +304,7 @@ function PagePlayer() {
     if (!oSound) {
       return false;
     }
+    sm.stopAll();
     var nextItem = self.getNextItem(oSound._data.oLI);
     if (nextItem) {
       pl.handleClick({target:nextItem}); // fake a click event - aren't we sneaky. ;)
@@ -615,84 +616,14 @@ function PagePlayer() {
           }
         } else {
           // ..different sound
-          if (self.lastSound) {
-            self.stopSound(self.lastSound);
-          }
-          if (spectrumContainer) {
-            thisSound._data.oTimingBox.appendChild(spectrumContainer);
-          }
-          thisSound.togglePause(); // start playing current
+          sm.stopAll();
+          var id = o.id;
+          setTimeout(function() { sm.sounds[id].play(); }, 0);
         }
 
-      } else {
-
-        // create sound
-        thisSound = sm.createSound({
-          id:o.id,
-          url:decodeURI(soundURL),
-          onplay:self.events.play,
-          onstop:self.events.stop,
-          onpause:self.events.pause,
-          onresume:self.events.resume,
-          onfinish:self.events.finish,
-          type:(o.type||null),
-          whileloading:self.events.whileloading,
-          whileplaying:self.events.whileplaying,
-          onmetadata:self.events.metadata,
-          onload:self.events.onload
-        });
-
-        // append control template
-        oControls = self.oControls.cloneNode(true);
-        oLI = o.parentNode;
-        oLI.appendChild(oControls);
-        if (spectrumContainer) {
-          oLI.appendChild(spectrumContainer);
-        }
-        self.soundsByObject[o.id] = thisSound;
-
-        // tack on some custom data
-        thisSound._data = {
-          oLink: o, // DOM reference within SM2 object event handlers
-          oLI: oLI,
-          oControls: self.select('controls',oLI),
-          oStatus: self.select('statusbar',oLI),
-          oLoading: self.select('loading',oLI),
-          oPosition: self.select('position',oLI),
-          oTimingBox: self.select('timing',oLI),
-          oTiming: self.select('timing',oLI).getElementsByTagName('div')[0],
-          oPeak: self.select('peak',oLI),
-          oGraph: self.select('spectrum-box',oLI),
-          className: self.css.sPlaying,
-          originalTitle: o.innerHTML,
-          metadata: null
-        };
-
-        if (spectrumContainer) {
-          thisSound._data.oTimingBox.appendChild(spectrumContainer);
-        }
-
-        // "Metadata"
-        if (thisSound._data.oLI.getElementsByTagName('ul').length) {
-          thisSound._data.metadata = new Metadata(thisSound);
-        }
-
-        // set initial timer stuff (before loading)
-        str = self.strings.timing.replace('%s1',self.config.emptyTime);
-        str = str.replace('%s2',self.config.emptyTime);
-        thisSound._data.oTiming.innerHTML = str;
-        self.sounds.push(thisSound);
-        if (self.lastSound) {
-          self.stopSound(self.lastSound);
-        }
-        self.resetGraph.apply(thisSound);
-        thisSound.play();
-
+        self.lastSound = thisSound; // reference for next call
       }
-
-      self.lastSound = thisSound; // reference for next call
       return self.stopEvent(e);
-
     }
 
   };
@@ -1064,6 +995,81 @@ function PagePlayer() {
     if (self.config.autoStart) {
       // grab the first ul.playlist link
       pl.handleClick({target:pl.getByClassName('playlist', 'ul')[0].getElementsByTagName('a')[0]});
+    }
+
+    var links = pl.getByClassName('playlist', 'ul')[0].getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {
+      if (!self.hasClass(links[i], 'song'))
+        continue;
+
+      var o = self.getTheDamnTarget({target:links[i]});
+
+      // create sound
+      self.initUL(self.getParentByNodeName(o, 'ul'));
+
+      // and decorate the link too, if needed
+      self.initItem(o);
+
+      soundURL = o.href;
+      thisSound = self.getSoundByObject(o);
+
+      var soundURL = o.href;
+      thisSound = sm.createSound({
+        id:o.id,
+        url:decodeURI(soundURL),
+        onplay:self.events.play,
+        onstop:self.events.stop,
+        onpause:self.events.pause,
+        onresume:self.events.resume,
+        onfinish:self.events.finish,
+        type:(o.type||null),
+        whileloading:self.events.whileloading,
+        whileplaying:self.events.whileplaying,
+        onmetadata:self.events.metadata,
+        onload:self.events.onload
+      });
+
+      // append control template
+      oControls = self.oControls.cloneNode(true);
+      oLI = o.parentNode;
+      oLI.appendChild(oControls);
+      if (spectrumContainer) {
+        oLI.appendChild(spectrumContainer);
+      }
+      self.soundsByObject[o.id] = thisSound;
+
+      // tack on some custom data
+      thisSound._data = {
+        oLink: o, // DOM reference within SM2 object event handlers
+        oLI: oLI,
+        oControls: self.select('controls',oLI),
+        oStatus: self.select('statusbar',oLI),
+        oLoading: self.select('loading',oLI),
+        oPosition: self.select('position',oLI),
+        oTimingBox: self.select('timing',oLI),
+        oTiming: self.select('timing',oLI).getElementsByTagName('div')[0],
+        oPeak: self.select('peak',oLI),
+        oGraph: self.select('spectrum-box',oLI),
+        className: self.css.sPlaying,
+        originalTitle: o.innerHTML,
+        metadata: null
+      };
+
+      if (spectrumContainer) {
+        thisSound._data.oTimingBox.appendChild(spectrumContainer);
+      }
+
+      // "Metadata"
+      if (thisSound._data.oLI.getElementsByTagName('ul').length) {
+        thisSound._data.metadata = new Metadata(thisSound);
+      }
+
+      // set initial timer stuff (before loading)
+      str = self.strings.timing.replace('%s1',self.config.emptyTime);
+      str = str.replace('%s2',self.config.emptyTime);
+      thisSound._data.oTiming.innerHTML = str;
+      self.sounds.push(thisSound);
+      self.resetGraph.apply(thisSound);
     }
 
   };
