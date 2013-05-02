@@ -47,6 +47,15 @@ ul.list span.item {
     color: rgb(155, 155, 155);
 }
 
+.toplinks {
+    margin-top:12px;
+    text-align:center;
+}
+
+.toplinks a {
+    color: rgb(155, 155, 155);
+}
+
 #my-container {
     margin: auto;
     max-width: 760px;
