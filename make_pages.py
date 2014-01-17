@@ -14,7 +14,12 @@ pages = [
   {
     'template': 'termite.html',
     'path': 'termite',
-    'tabname': 'Termite',
+    'tabname': 'Cursynth',
+  },
+  {
+    'template': 'cursynth.html',
+    'path': 'cursynth',
+    'tabname': 'Cursynth',
   },
 ]
 
